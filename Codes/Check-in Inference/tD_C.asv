@@ -1,0 +1,24 @@
+
+tD=cell(c_n,c_n);
+N=numel(t(:,1));
+
+for i=1:N
+    st=t(i,2);
+    ed=t(i,3);
+    
+    for j=1:c_n
+        if ismember(st,cl{j})
+            stC=j;
+            break
+        end
+    end
+    
+    for j=1:c_n
+        if ismember(ed,cl{j})
+            edC=j;
+            break
+        end
+    end
+    
+    tD{stC,edC}=[tD{stC,edC} t(i,1)];
+end
